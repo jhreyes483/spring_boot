@@ -1,23 +1,52 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" >
 
 <head>
     <meta charset="UTF-8">
 </head>
 
-<body>
+<body class="container-fluid">
 
     <h1>Información de Funcionario</h1>
     <ul>
         <li><strong>Nombre:</strong> <span th:text="${Funcionario.nombre}"></span></li>
         <li><strong>Apellido:</strong> <span th:text="${Funcionario.apellido}"></span></li>
-        <li><strong>Dirección:</strong> <span th:text="${Funcionario.direccion}"></span></li>
+        <li><strong>Dirección:</strong>
+            <span th:text="${Funcionario.direccion !=null ? Funcionario.direccion : 'No tiene direccion'}" ></span>
+        </li>                          
         <li><strong>Puesto:</strong> <span th:text="${Funcionario.puesto}"></span></li>
         <li><strong>Edad:</strong> <span th:text="${Funcionario.edad}"></span></li>
         <li><strong>Teléfono:</strong> <span th:text="${Funcionario.telefono}"></span></li>
         <li><strong>ID:</strong> <span th:text="${Funcionario.id}"></span></li>
     </ul>
     <!-- Acceder al atributo 'empresa' -->
+
+    <h2>Lista empleados</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Direccion</th>
+                <th>Puesto</th>
+                <th>Edad</th>
+                <th>telefono</th>
+                <th>Departamento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="Funcionario : ${Funcionarios}">
+                <td th:text="${Funcionario.nombre}"></td>
+                <td th:text="${Funcionario.apellido}"></td>
+                <td th:text="${Funcionario.direccion}"></td>
+                <td th:text="${Funcionario.puesto}"></td>
+                <td th:text="${Funcionario.edad}"></td>
+                <td th:text="${Funcionario.telefono}"></td>
+                <td th:text="${Funcionario.id}"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 
 </html>
