@@ -2,7 +2,7 @@ package com.bancolombia.test.models;
 
 public class Funcionarios {
 
-    private String nommbre, apellido, direccion, puesto;
+    private String nombre, apellido, direccion, puesto;
     private int edad, telefono, id;
 
     public Funcionarios(
@@ -14,7 +14,7 @@ public class Funcionarios {
         int telefono, 
         int id
         ){
-            this.nommbre  = nombre;
+            this.nombre  = nombre;
             this.apellido = apellido;
             this.direccion = direccion;
             this.puesto    = puesto;
@@ -24,12 +24,19 @@ public class Funcionarios {
 
         }
 
+/* 
+    @Override
+    public String toString() {
+        return "Funcionario [nombre=" + this.nombre + ", apellido=" + this.apellido + ", direccion=" + this.direccion + ", puesto=" + this.puesto +  ", edad=" + this.edad + ", telefono=" + this.telefono + ", id=" + this.id + "]"; 
+    }  
+        */
 
-    public String getNommbre() {
-        return nommbre;
+
+    public String getNombre() {
+        return nombre;
     }
-    public void setNommbre(String nommbre) {
-        this.nommbre = nommbre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     public String getApellido() {
         return apellido;

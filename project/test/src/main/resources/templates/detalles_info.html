@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8" >
-        <title>Detalles Información</title>
-    </head>
-    <body>
-        <h1 th:text="${nombre}"></h1>   <!-- Acceder al atributo 'nombre' -->
-        <h2 th:text="${edad}"></h2>             <!-- Acceder al atributo 'edad' -->
-        <h3 th:text="${empresa}"> </h3>       <!-- Acceder al atributo 'empresa' -->
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <h1>Información de Funcionario</h1>
+    <ul>
+        <li><strong>Nombre:</strong> <span th:text="${Funcionario.nombre}"></span></li>
+        <li><strong>Apellido:</strong> <span th:text="${Funcionario.apellido}"></span></li>
+        <li><strong>Dirección:</strong> <span th:text="${Funcionario.direccion}"></span></li>
+        <li><strong>Puesto:</strong> <span th:text="${Funcionario.puesto}"></span></li>
+        <li><strong>Edad:</strong> <span th:text="${Funcionario.edad}"></span></li>
+        <li><strong>Teléfono:</strong> <span th:text="${Funcionario.telefono}"></span></li>
+        <li><strong>ID:</strong> <span th:text="${Funcionario.id}"></span></li>
+    </ul>
+    <!-- Acceder al atributo 'empresa' -->
+</body>
+
 </html>
