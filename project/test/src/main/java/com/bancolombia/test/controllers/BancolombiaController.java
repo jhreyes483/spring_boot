@@ -5,11 +5,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.bancolombia.test.models.Funcionarios;
+import com.bancolombia.test.models.dto.ClaseDTO;
 
 @Controller
 public class BancolombiaController {
     @GetMapping("/detalles_info")
     public String info(Model model) {
+
+
+
+ 
         Funcionarios funcionario1 = new Funcionarios(
                 "Javier",
                 "Reyes",
@@ -20,6 +25,7 @@ public class BancolombiaController {
                 001
             );
             model.addAttribute("Funcionario", funcionario1);
+ 
 
         return "detalles_info";
     }
